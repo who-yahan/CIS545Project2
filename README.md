@@ -9,18 +9,8 @@ After that, we split the data into two parts: training sets and test sets, which
 
 Problem 2
 
-For Problem 2, we used PEGASOS to train an SVM on the training articles and made a plot of training error vs. number of iterations. The Input, Process and Output of the approach is:
-Input:\ \ Training\ set\ S=\left\{\left(x_1,y_1\right),\left(x_2,y_2\right),\ldots,\left(x_n,y_n\right)\right\}
-      Regularization parameter λ
-      Number of iterations T
-Initialize: choose w1 s.t. w1≤1λ
-For t = 1,2,3,…,T:
-Choose A_t\in S,\ A_t\ is\ a\ random\ subset\ of\ S
-\ \ \ \ \ \ \ \ \ A_t^+=x,y∈At:ywt,x<1
-\ \ \ \ \ \ \ \ \ dt=\ \lambda w_t-\frac{1}{|A_t|}\sum_{(x,y)\in A_t^+} y x
-\ \ \ \ \ \ \ \ \ \ SGDηt= 1tλwt1= wt-ηt*dtwt+1=min1,1λwt1wt1
-Output: w_{t+1}
-	The following is the image of Accuracy VS Iteration. From this picture we can see that when it is about 18 to 20 iteration, the accuracy increase very fast. And then the accuracy increases in fluctuation. And at 100 iterations, the accuracy is largest
+For Problem 2, we used PEGASOS to train an SVM on the training articles and made a plot of training error vs. number of iterations.
+The following is the image of Accuracy VS Iteration. From this picture we can see that when it is about 18 to 20 iteration, the accuracy increase very fast. And then the accuracy increases in fluctuation. And at 100 iterations, the accuracy is largest
 	 
 Plot1. PEGASOS Accuracy VS Iteration for Batch Size=100, lamda=0.001
 
@@ -51,9 +41,9 @@ Plot5 NN Training Error of Different Number of Units
 	
 Problem 5
 
-	At last, we choose the parameter as following. For Pegasos and AdaGrad, iteration T = 100, Batch Size = 500, lamda = 0.001.
-	And for NN, we use 3 hidden layers to reduce the running time and 90 units per layer. 
-	We use the three algorithm for training the test data. We can see that , for Pegasos and Adagrad, the best accuracy are 0.94 and 0.86 respectively. The NN can get the best accuracy about 0.97, however, the time it takes is longest. For about 30 minutes on my computer. 
+At last, we choose the parameter as following. For Pegasos and AdaGrad, iteration T = 100, Batch Size = 500, lamda = 0.001.
+And for NN, we use 3 hidden layers to reduce the running time and 90 units per layer. 
+We use the three algorithm for training the test data. We can see that , for Pegasos and Adagrad, the best accuracy are 0.94 and 0.86 respectively. The NN can get the best accuracy about 0.97, however, the time it takes is longest. For about 30 minutes on my computer. 
 
 
 
